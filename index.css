@@ -20,6 +20,7 @@ body {
 	--retro: #deeeea;
 	--space: #bf1363;
 	--font-special: "Abril Fatface", cursive;
+	--font-cursive: "Pacifico", cursive;
 }
 
 /* Header */
@@ -35,6 +36,12 @@ body {
 	margin-left: 10%;
 	font-family: var(--font-special);
 	font-size: 50px;
+	transition: 0.5s;
+	user-select: none;
+}
+
+.logo:hover {
+	transform: scale(1.1);
 }
 
 .logo > div {
@@ -66,11 +73,15 @@ body {
 }
 
 .services > h1 {
-	font-family: var(--font-special);
+	font-family: var(--font-cursive);
 	color: var(--black);
 	text-align: center;
 	font-size: 40px;
 	font-weight: 400;
+}
+
+.services > h1 > span {
+	color: var(--space);
 }
 
 .container {
@@ -93,6 +104,12 @@ body {
 .service-img {
 	border-top-left-radius: 80px;
 	width: 100%;
+	filter: grayscale();
+	transition: 0.5s;
+}
+
+.service:hover > .service-img {
+	filter: grayscale(0);
 }
 
 .service-img > img {
@@ -102,6 +119,7 @@ body {
 
 .service-details {
 	padding: 20px;
+	border-bottom-right-radius: 80px;
 }
 
 .service-details > h1 {
@@ -133,7 +151,7 @@ body {
 }
 
 .about > h1 {
-	font-family: var(--font-special);
+	font-family: var(--font-cursive);
 	color: #fff;
 	text-align: center;
 	font-size: 40px;
@@ -163,13 +181,8 @@ body {
 }
 
 @media all and (max-width: 500px) {
-	/* Header */
-	.header > div {
-		width: 160px;
-		margin: 0 auto;
-	}
-
 	/* Services */
+
 	.services {
 		padding: 30px 0;
 	}
